@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suresh S | AI-Powered Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Suresh S, an AI-Powered Full-Stack Developer, Founder at Shevara Nexus, and Cloud Computing Enthusiast.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+    <!-- Cinematic Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="logo-animation">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text text-gradient">SURESH S</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="status-text" id="statusText">Initializing Core Systems...</div>
+        </div>
+    </div>
+
+    <!-- Interactive Canvas Background -->
+    <canvas id="particleCanvas" style="position: fixed; inset: 0; pointer-events: none; z-index: 0;"></canvas>
+    
+    <!-- Ambient Lights -->
+    <div class="ambient-glow bg-blue-glow" style="top: -20%; left: -10%; opacity: 0.25;"></div>
+    <div class="ambient-glow bg-purple-glow" style="bottom: -20%; right: -10%; opacity: 0.15;"></div>
+
+    <!-- Navigation Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#hero" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Suresh.dev</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <nav>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://github.com/Suresh2160" target="_blank" class="social-icon header-social-icon" style="width: 38px; height: 38px; border-radius: 50%;">
+                    <i data-lucide="github" style="width: 16px; height: 16px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sureshio" target="_blank" class="social-icon header-social-icon" style="width: 38px; height: 38px; border-radius: 50%;">
+                    <i data-lucide="linkedin" style="width: 16px; height: 16px;"></i>
+                </a>
+                <a href="#contact" class="btn-glow btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem; border-radius: 50px;">
+                    Connect Now
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuCloseBtn">
+            <i data-lucide="x" style="width: 2rem; height: 2rem;"></i>
+        </button>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#achievements" class="mobile-nav-link">Achievements</a>
+        <a href="#certifications" class="mobile-nav-link">Certifications</a>
+        <a href="#contact" class="mobile-nav-link" style="color: var(--color-cyan); margin-top: 1rem; border: 1px solid rgba(6, 182, 212, 0.3); padding: 0.75rem 2rem; border-radius: 50px;">Connect</a>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="container">
+            <div class="hero-grid">
+                <!-- Left Side: Copy/CTA -->
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--color-cyan); border-radius: 50%; animation: pulse 2s infinite;"></span>
+                        Available for Opportunities
+                    </div>
+                    
+                    <h1 class="hero-title reveal-element">
+                        Elevating Code with <br><span class="text-gradient">Artificial Intelligence</span>
+                    </h1>
+
+                    <div class="hero-subtitle reveal-element">
+                        <span>I design & build</span>
+                        <span class="typewriter text-cyan" id="typewriter"></span>
+                    </div>
+
+                    <p class="hero-desc reveal-element">
+                        Hi, I'm <strong>Suresh S</strong>, a B.Tech IT scholar and Founder at <span class="text-cyan">Shevara Nexus</span>. I specialize in developing high-performance full-stack web architectures integrated with modern AI capabilities.
+                    </p>
+
+                    <!-- Action CTAs -->
+                    <div class="hero-ctas reveal-element">
+                        <a href="#contact" class="btn-glow btn-primary">
+                            <span>Get In Touch</span>
+                            <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                        </a>
+                        <a href="asserts/Suresh_SResume.pdf" download="Suresh_S_Resume.pdf" class="btn-glow btn-secondary">
+                            <i data-lucide="download" style="width: 18px; height: 18px;"></i>
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+
+                    <!-- Professional Branding Social Buttons -->
+                    <div class="hero-socials reveal-element">
+                        <span class="social-title">FIND ME ON:</span>
+                        <a href="https://github.com/Suresh2160" target="_blank" class="social-icon">
+                            <i data-lucide="github" style="width: 18px; height: 18px;"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sureshio" target="_blank" class="social-icon">
+                            <i data-lucide="linkedin" style="width: 18px; height: 18px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Profile Image -->
+                <div class="hero-visual-wrapper reveal-element">
+                    <div class="profile-card-glow"></div>
+                    <div class="orbit-ring orbit-1"></div>
+                    <div class="orbit-ring orbit-2"></div>
+                    
+                    <!-- Floating Tech Badge 1 -->
+                    <div class="floating-badge badge-1">
+                        <div class="badge-icon cyan">
+                            <i data-lucide="cpu" style="width: 16px; height: 16px;"></i>
+                        </div>
+                        <div>
+                            <div class="badge-text-title">INTEGRATIONS</div>
+                            <div class="badge-text-value">AI-Driven Agents</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Tech Badge 2 -->
+                    <div class="floating-badge badge-2">
+                        <div class="badge-icon purple">
+                            <i data-lucide="code-2" style="width: 16px; height: 16px;"></i>
+                        </div>
+                        <div>
+                            <div class="badge-text-title">DEVELOPMENT</div>
+                            <div class="badge-text-value">Full-Stack Cloud</div>
+                        </div>
+                    </div>
+
+                    <!-- Picture Card -->
+                    <div class="profile-image-container">
+                        <div class="profile-image-inner">
+                            <img src="asserts/suresh_s.jpg" alt="Suresh S" class="profile-image">
+                            <div class="profile-tag">Suresh S</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">01. Profile Brief</span>
+                <h3 class="section-title reveal-element">Engineering The Future</h3>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card-wrapper reveal-element" style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+                    <!-- Startup Card -->
+                    <div class="about-card-fancy glass-card" style="max-width: 100%; width: 100%; margin-top: 1.5rem;">
+                        <div class="about-card-icon" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.35); color: var(--color-purple);">
+                            <i data-lucide="rocket" style="width: 22px; height: 22px;"></i>
+                        </div>
+                        <h4 class="about-card-title">Shevara Nexus</h4>
+                        <p class="about-card-text">
+                            Founder of Shevara Nexus, engineering premium high-performance digital environments, cloud configurations, and bespoke AI applications.
+                        </p>
+                        <div class="about-card-meta" style="color: var(--color-purple);">
+                            <span>FOUNDER & LEADER</span>
+                            <div class="about-meta-divider" style="background: var(--color-purple);"></div>
+                            <span>EST. 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- System Diagnostics Console -->
+                    <div class="glass-card reveal-element" style="padding: 1.5rem; font-family: var(--font-mono); border-color: rgba(6, 182, 212, 0.15); width: 100%; text-align: left;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                            <span style="font-size: 0.7rem; color: var(--color-gray-500);">DIAGNOSTICS_CONSOLE.sh</span>
+                            <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--color-emerald); border-radius: 50%; animation: pulse 2s infinite;"></span>
+                        </div>
+                        <div style="font-size: 0.8rem; line-height: 1.6; color: var(--color-cyan);">
+                            <div>$ ssch --status</div>
+                            <div style="color: #fff; padding-left: 0.75rem; margin-bottom: 0.5rem;">> CGPA: 8.3 / 10.0 (IT Scholar)</div>
+                            <div>$ ssch --focus</div>
+                            <div style="color: #fff; padding-left: 0.75rem; margin-bottom: 0.5rem;">> Full-Stack, AI Web Apps, Cloud</div>
+                            <div>$ ssch --deployment</div>
+                            <div style="color: var(--color-emerald); padding-left: 0.75rem;">> RAD InfoTech Web Dev Intern (Ongoing)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-desc-wrapper reveal-element">
+                    <h4 class="about-subtitle">AI-Powered Full-Stack Developer & Cloud Enthusiast</h4>
+                    <p class="about-text">
+                        I am pursuing my Bachelor of Technology in Information Technology at <strong>Sree Sakthi Engineering College</strong>, holding a stellar CGPA of <strong>8.3</strong>. My academic journey is coupled with hands-on professional expertise, notably as an AI-Powered Web Developer Intern at <strong>RAD InfoTech</strong>.
+                    </p>
+                    <p class="about-text">
+                        My philosophy revolves around bridging the gap between design and high-tech code, utilizing AI tools to speed up workflows, optimize user experiences, and engineer systems that are secure, stable, and highly responsive.
+                    </p>
+                    
+                    <div class="about-metrics">
+                        <div>
+                            <div class="metric-label">Education Credentials</div>
+                            <div class="metric-value" style="font-size: 1.05rem;">B.Tech IT Scholar</div>
+                            <div class="metric-sub">Sree Sakthi Eng. College (8.3 CGPA)</div>
+                        </div>
+                        <div>
+                            <div class="metric-label">Industry Training</div>
+                            <div class="metric-value" style="font-size: 1.05rem;">Web Developer Intern</div>
+                            <div class="metric-sub">RAD InfoTech AI-Web Team</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">02. Capabilities</span>
+                <h3 class="section-title reveal-element">My Tech Stack & Tools</h3>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Frontend Card -->
+                <div class="skill-group-card glass-card reveal-element">
+                    <div class="skill-card-icon cyan">
+                        <i data-lucide="layout" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <h4 class="skill-group-title">Frontend</h4>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet cyan"></span> React.js</li>
+                        <li class="skill-item"><span class="skill-bullet cyan"></span> Tailwind CSS</li>
+                        <li class="skill-item"><span class="skill-bullet cyan"></span> HTML5 / CSS3</li>
+                        <li class="skill-item"><span class="skill-bullet cyan"></span> JavaScript (ES6+)</li>
+                    </ul>
+                </div>
+
+                <!-- Backend Card -->
+                <div class="skill-group-card glass-card reveal-element">
+                    <div class="skill-card-icon purple">
+                        <i data-lucide="server" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <h4 class="skill-group-title">Backend</h4>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet purple"></span> Node.js</li>
+                        <li class="skill-item"><span class="skill-bullet purple"></span> Express.js</li>
+                        <li class="skill-item"><span class="skill-bullet purple"></span> RESTful APIs</li>
+                    </ul>
+                </div>
+
+                <!-- Database Card -->
+                <div class="skill-group-card glass-card reveal-element">
+                    <div class="skill-card-icon emerald">
+                        <i data-lucide="database" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <h4 class="skill-group-title">Database</h4>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet emerald"></span> MongoDB</li>
+                        <li class="skill-item"><span class="skill-bullet emerald"></span> Firebase Realtime</li>
+                        <li class="skill-item"><span class="skill-bullet emerald"></span> MySQL</li>
+                    </ul>
+                </div>
+
+                <!-- Languages Card -->
+                <div class="skill-group-card glass-card reveal-element">
+                    <div class="skill-card-icon pink">
+                        <i data-lucide="terminal" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <h4 class="skill-group-title">Programming</h4>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet pink"></span> Python</li>
+                        <li class="skill-item"><span class="skill-bullet pink"></span> Java</li>
+                    </ul>
+                </div>
+
+                <!-- Tools Card -->
+                <div class="skill-group-card glass-card reveal-element">
+                    <div class="skill-card-icon amber">
+                        <i data-lucide="wrench" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <h4 class="skill-group-title">Tools</h4>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-bullet amber"></span> Git / GitHub</li>
+                        <li class="skill-item"><span class="skill-bullet amber"></span> VS Code</li>
+                        <li class="skill-item"><span class="skill-bullet amber"></span> Power BI</li>
+                        <li class="skill-item"><span class="skill-bullet amber"></span> Vercel</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Experience & Education Timeline -->
+        <section id="experience" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">03. Chronicles</span>
+                <h3 class="section-title reveal-element">Experience & Education</h3>
+            </div>
+            
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                
+                <!-- Timeline Dot 1 -->
+                <div class="timeline-item reveal-element">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">DECEMBER 2025 - PRESENT</span>
+                        <span class="timeline-location">COIMBATORE, INDIA</span>
+                    </div>
+                    <h4 class="timeline-title">Founder & Principal Engineer</h4>
+                    <h5 class="timeline-org">Shevara Nexus</h5>
+                    <p class="timeline-body">
+                        Leading the architectural design and strategic expansion of Shevara Nexus. We build customized digital interfaces, cloud automation strategies, and AI agent extensions to optimize business metrics.
+                    </p>
+                </div>
+
+                <!-- Timeline Dot 2 -->
+                <div class="timeline-item purple reveal-element">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">MARCH 2026 - SEPTEMBER 2026</span>
+                        <span class="timeline-location">REMOTE</span>
+                    </div>
+                    <h4 class="timeline-title">AI-Powered Web Developer Intern</h4>
+                    <h5 class="timeline-org">RAD InfoTech</h5>
+                    <p class="timeline-body">
+                        Developed responsive full-stack modules. Engineered robust APIs, incorporated machine learning workflows, and leveraged AI assistants to fast-track script generation, error tracking, and design mockups.
+                    </p>
+                </div>
+
+                <!-- Timeline Dot 3 -->
+                <div class="timeline-item emerald reveal-element">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-date">2023 - 2027</span>
+                        <span class="timeline-location">COIMBATORE, INDIA</span>
+                    </div>
+                    <h4 class="timeline-title">B.Tech in Information Technology</h4>
+                    <h5 class="timeline-org">Sree Sakthi Engineering College</h5>
+                    <p class="timeline-body">
+                        Maintaining an academic record of 8.3 CGPA. Specialized in Cloud Infrastructure, Agile paradigms, and Web Development. Participated in multiple national events representing the technology cell.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Premium Projects Showcase -->
+        <section id="projects" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div class="projects-header">
+                <div>
+                    <span class="section-tag reveal-element">04. Works</span>
+                    <h3 class="section-title reveal-element" style="margin-bottom: 0;">Featured Project Portfolio</h3>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="filter-tabs reveal-element">
+                    <button class="filter-btn project-filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn project-filter-btn" data-filter="ai-web">AI & ML</button>
+                    <button class="filter-btn project-filter-btn" data-filter="fullstack">FULL-STACK</button>
+                </div>
+            </div>
+            
+            <div class="projects-grid" id="projectsGrid">
+                
+                <!-- Project 1: LMS Portal -->
+                <div class="project-card glass-card reveal-element" data-category="fullstack">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon cyan">
+                                <i data-lucide="book-open" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status cyan">ACTIVE</span>
+                        </div>
+                        <h4 class="project-title">LMS Portal</h4>
+                        <p class="project-desc">
+                            High-performance learning management system featuring detailed student/admin dashboards, course assignments tracking, authentication layers, and progress analytics.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Auth</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://69120aaf85ef23d75dc41974--prismatic-liger-c0d341.netlify.app/" target="_blank" class="project-link-btn">
+                                VIEW DEMO <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Resume Analyzer -->
+                <div class="project-card glass-card reveal-element" data-category="ai-web">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon purple">
+                                <i data-lucide="brain-circuit" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status purple">AI INTEGRATED</span>
+                        </div>
+                        <h4 class="project-title">AI Resume Analyzer</h4>
+                        <p class="project-desc">
+                            Leverages artificial intelligence algorithms to review resumes for ATS compatibility, computing instant scoring, keyword suggestions, and formatting updates.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">AI / LLM</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Tailwind</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-btn">
+                                VIEW DEMO <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Mock Interview Platform -->
+                <div class="project-card glass-card reveal-element" data-category="ai-web">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon purple">
+                                <i data-lucide="users" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status purple">AI SIMULATOR</span>
+                        </div>
+                        <h4 class="project-title">Mock Interview Platform</h4>
+                        <p class="project-desc">
+                            Conducts AI-driven interview simulations. Includes technical question banks, sentiment evaluation, behavioral review analytics, and instant feedback.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">AI API</span>
+                            <span class="tech-badge">Node</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-btn">
+                                VIEW DEMO <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Certificate Verification System -->
+                <div class="project-card glass-card reveal-element" data-category="fullstack">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon emerald">
+                                <i data-lucide="shield-check" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status emerald">SECURE</span>
+                        </div>
+                        <h4 class="project-title">Certificate Verifier</h4>
+                        <p class="project-desc">
+                            Verifies digital academic certificates with advanced fraud prevention algorithms. Utilizes unique credentials validation and includes admin interfaces.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Cryptography</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-btn">
+                                VIEW DEMO <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Student Dashboard System -->
+                <div class="project-card glass-card reveal-element" data-category="fullstack">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon cyan">
+                                <i data-lucide="panels-top-left" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status cyan">FIREBASE</span>
+                        </div>
+                        <h4 class="project-title">Student Dashboard</h4>
+                        <p class="project-desc">
+                            Web platform tracking metrics such as student attendance, CGPA scores, and analytics dashboard. Implements synchronized Firebase Realtime updates.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-btn">
+                                VIEW DEMO <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Portfolio Website -->
+                <div class="project-card glass-card reveal-element" data-category="fullstack">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon cyan">
+                                <i data-lucide="palette" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status cyan">VANILLA</span>
+                        </div>
+                        <h4 class="project-title">Premium Portfolio</h4>
+                        <p class="project-desc">
+                            This custom-made, fast, interactive, responsive portfolio website highlighting projects, certifications, and capabilities with clean, modern glassmorphic theme.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-btn">
+                                VIEW DEMO <i data-lucide="external-link" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: GPA Prediction System -->
+                <div class="project-card glass-card reveal-element" data-category="ai-web">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon purple">
+                                <i data-lucide="line-chart" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status purple">ML MODEL</span>
+                        </div>
+                        <h4 class="project-title">GPA Predictor</h4>
+                        <p class="project-desc">
+                            Uses linear regression machine learning models to forecast future GPA and semesters performance metrics based on previous academic datasets.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">SciKit-Learn</span>
+                            <span class="tech-badge">ML Regression</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Suresh2160/GPA-Prediction-System-using-Linear-Regression" target="_blank" class="project-link-btn">
+                                GITHUB REPO <i data-lucide="github" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: AgriMart -->
+                <div class="project-card glass-card reveal-element" data-category="fullstack">
+                    <div>
+                        <div class="project-card-header">
+                            <div class="project-icon cyan">
+                                <i data-lucide="shopping-cart" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <span class="project-status cyan">E-COMMERCE</span>
+                        </div>
+                        <h4 class="project-title">AgriMart</h4>
+                        <p class="project-desc">
+                            Agricultural e-commerce web dashboard providing simple product catalogs, robust authentication layers, purchase carts, and MongoDB backend.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-badges">
+                            <span class="tech-badge">HTML/CSS</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Suresh2160/agrimart" target="_blank" class="project-link-btn">
+                                GITHUB REPO <i data-lucide="github" style="width: 12px; height: 12px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Achievements Section -->
+        <section id="achievements" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">05. Milestones</span>
+                <h3 class="section-title reveal-element">Selected Achievements</h3>
+            </div>
+            
+            <div class="achievements-grid">
+                <!-- Achievement 1 -->
+                <div class="achievement-card glass-card reveal-element">
+                    <div class="achievement-icon cyan">
+                        <i data-lucide="trophy" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <div class="achievement-val">3rd Place</div>
+                    <span class="achievement-tag">College Hackathon</span>
+                    <p class="achievement-desc">Awarded for engineering an automated digital interface solution under intense timeline pressure.</p>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="achievement-card glass-card reveal-element">
+                    <div class="achievement-icon purple">
+                        <i data-lucide="award" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <div class="achievement-val">SIH Participant</div>
+                    <span class="achievement-tag">Smart India Hackathon</span>
+                    <p class="achievement-desc">Shortlisted for competing in nationwide problem-solving challenges using cloud computing modules.</p>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="achievement-card glass-card reveal-element">
+                    <div class="achievement-icon emerald">
+                        <i data-lucide="presentation" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <div class="achievement-val">National Conference</div>
+                    <span class="achievement-tag">Speaker/Participant</span>
+                    <p class="achievement-desc">Presented research abstracts evaluating security parameters in cloud and e-learning databases.</p>
+                </div>
+
+                <!-- Achievement 4 -->
+                <a href="https://www.hackerrank.com/profile/s_suresh63808661" target="_blank" class="achievement-card glass-card reveal-element" style="text-decoration: none; display: block; color: inherit;">
+                    <div class="achievement-icon amber">
+                        <i data-lucide="star" style="width: 22px; height: 22px;"></i>
+                    </div>
+                    <div class="achievement-val">Gold Badge</div>
+                    <span class="achievement-tag">Python - HackerRank</span>
+                    <p class="achievement-desc">Earned python coding badges with high algorithmic accuracy on challenging hacker rank coding boards.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 7. Certifications Section -->
+        <section id="certifications" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">06. Credentials</span>
+                <h3 class="section-title reveal-element">Professional Licenses & Certs</h3>
+            </div>
+
+            <!-- Infosys Springboard Profile CTA -->
+            <div class="reveal-element" style="display: flex; justify-content: center; margin-top: -1rem; margin-bottom: 3.5rem;">
+                <a href="https://infyspringboard.onwingspan.com/web/en/app/profile/competency/certificate" target="_blank" class="btn-glow btn-primary" style="padding: 0.75rem 2rem; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; font-weight: 600;">
+                    <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+                    <span>Verify 7+ Infosys Springboard Certificates</span>
+                </a>
+            </div>
+            
+            <div class="certs-grid">
+                <!-- Cert 1: Oracle Academy -->
+                <div class="cert-card glass-card reveal-element">
+                    <div class="cert-badge purple" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.15); color: var(--color-purple);">
+                        <i data-lucide="award" style="width: 22px; height: 22px; margin-bottom: 2px;"></i>
+                        <span style="font-size: 0.5rem; font-family: var(--font-mono); opacity: 0.8; text-transform: uppercase;">Oracle</span>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">AI & Machine Learning in Java</h4>
+                        <p class="cert-desc">Granted by Oracle Academy. Hands-on program covering neural networks, deep learning models, and Java integration.</p>
+                        <a href="certificates/SURESH S_Artificial_Intelligence_with_Machine_Learning_in_Java_–_English_Award_Of_Completion_on_the_15th_of_November__2025.pdf" target="_blank" class="cert-link" style="color: var(--color-purple);">
+                            VIEW CREDENTIAL <i data-lucide="file-text" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 2: NPTEL -->
+                <div class="cert-card glass-card reveal-element">
+                    <div class="cert-badge cyan">
+                        <span class="cert-score-num">82%</span>
+                        <span class="cert-score-label">SCORE</span>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">NPTEL Cloud Computing</h4>
+                        <p class="cert-desc">Swayam/NPTEL Core Certification. Deep-dives into virtualization, VMs, microservices and architectures.</p>
+                        <a href="asserts/NPTEL26CS55S135050013304834984.pdf" target="_blank" class="cert-link">
+                            VIEW CREDENTIAL <i data-lucide="file-text" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 3: C Training (IIT Bombay) -->
+                <div class="cert-card glass-card reveal-element">
+                    <div class="cert-badge pink" style="background: rgba(236,72,153,0.08); border-color: rgba(236,72,153,0.15); color: var(--color-pink);">
+                        <span class="cert-score-num" style="color: var(--color-pink);">92%</span>
+                        <span class="cert-score-label" style="color: var(--color-pink);">SCORE</span>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">C Programming (IIT Bombay)</h4>
+                        <p class="cert-desc">Organized by Sree Sakthi Engineering College and invigilated remotely by Spoken Tutorial Project, IIT Bombay.</p>
+                        <a href="certificates/SURESH-Participant-Certificate (2).pdf" target="_blank" class="cert-link" style="color: var(--color-pink);">
+                            VIEW CREDENTIAL <i data-lucide="file-text" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 4: C++ Training (IIT Bombay) -->
+                <div class="cert-card glass-card reveal-element">
+                    <div class="cert-badge emerald">
+                        <span class="cert-score-num" style="color: var(--color-emerald);">85%</span>
+                        <span class="cert-score-label" style="color: var(--color-emerald);">SCORE</span>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">C++ Programming (IIT Bombay)</h4>
+                        <p class="cert-desc">Organized by Sree Sakthi Engineering College and invigilated remotely by Spoken Tutorial Project, IIT Bombay.</p>
+                        <a href="certificates/SURESH-Participant-Certificate (3).pdf" target="_blank" class="cert-link" style="color: var(--color-emerald);">
+                            VIEW CREDENTIAL <i data-lucide="file-text" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 5: Python Training (IIT Bombay) -->
+                <div class="cert-card glass-card reveal-element">
+                    <div class="cert-badge amber">
+                        <span class="cert-score-num" style="color: var(--color-amber);">80%</span>
+                        <span class="cert-score-label" style="color: var(--color-amber);">SCORE</span>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">Python 3.4.3 (IIT Bombay)</h4>
+                        <p class="cert-desc">Organized by Sree Sakthi Engineering College and invigilated remotely by Spoken Tutorial Project, IIT Bombay.</p>
+                        <a href="certificates/SURESH-Participant-Certificate (1).pdf" target="_blank" class="cert-link" style="color: var(--color-amber);">
+                            VIEW CREDENTIAL <i data-lucide="file-text" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 6: PHP and MySQL Training -->
+                <div class="cert-card glass-card reveal-element">
+                    <div class="cert-badge purple" style="background: rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.15); color: var(--color-purple);">
+                        <span class="cert-score-num" style="color: var(--color-purple);">62%</span>
+                        <span class="cert-score-label" style="color: var(--color-purple);">SCORE</span>
+                    </div>
+                    <div>
+                        <h4 class="cert-title">PHP and MySQL Training</h4>
+                        <p class="cert-desc">Invigilated remotely by EduPyramids, SINE, IIT Bombay. Covers relational databases, sessions, and server routing.</p>
+                        <a href="certificates/SURESH-SUBRAMANIAN-Participant-Certificate (1).pdf" target="_blank" class="cert-link" style="color: var(--color-purple);">
+                            VIEW CREDENTIAL <i data-lucide="file-text" style="width: 12px; height: 12px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. GitHub Stats Section -->
+        <section id="github" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">07. Git Report</span>
+                <h3 class="section-title reveal-element">Interactive GitHub Dashboard</h3>
+            </div>
+            
+            <div class="github-dashboard glass-card reveal-element">
+                <div class="github-header">
+                    <div class="github-profile">
+                        <div class="github-profile-icon">
+                            <i data-lucide="github" style="width: 24px; height: 24px;"></i>
+                        </div>
+                        <div>
+                            <h4 class="github-user-name">Suresh2160</h4>
+                            <p class="github-user-handle">github.com/Suresh2160</p>
+                        </div>
+                    </div>
+                    
+                    <div class="github-stats">
+                        <div class="github-stat-box">
+                            <div class="github-stat-val cyan">18</div>
+                            <div class="github-stat-label">Repositories</div>
+                        </div>
+                        <div class="github-stat-box">
+                            <div class="github-stat-val purple">520+</div>
+                            <div class="github-stat-label">Commits</div>
+                        </div>
+                        <div class="github-stat-box">
+                            <div class="github-stat-val emerald">98%</div>
+                            <div class="github-stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="github-pipeline-grid">
+                    <div class="github-pipeline-meta">
+                        <span>LATEST CONTRIBUTIONS PIPELINE</span>
+                        <span class="text-cyan" style="animation: pulse 2s infinite;">● PIPELINE ONLINE</span>
+                    </div>
+                    <div class="grid-contributions">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Contact Section -->
+        <section id="contact" class="container" style="padding: 7rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="text-align: center;">
+                <span class="section-tag reveal-element">08. Terminal Link</span>
+                <h3 class="section-title reveal-element">Initiate Connection</h3>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info reveal-element">
+                    <h4 class="contact-info-title">Let's build something exceptional together</h4>
+                    <p class="contact-info-desc">
+                        I am currently open to internship, full-time full-stack development, and AI engineering opportunities. Drop a query or connection ping and my webhook will respond shortly.
+                    </p>
+                    
+                    <div class="contact-info-items">
+                        <div class="contact-item">
+                            <div class="contact-item-icon cyan">
+                                <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">EMAIL ME</div>
+                                <a href="mailto:s.suresh9159329346@gmail.com" class="contact-item-value">s.suresh9159329346@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon emerald" style="background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.15); color: var(--color-emerald);">
+                                <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">CALL / WHATSAPP</div>
+                                <a href="tel:+916380866815" class="contact-item-value">+91 6380866815</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon purple">
+                                <i data-lucide="map-pin" style="width: 20px; height: 20px;"></i>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">LOCATION</div>
+                                <div class="contact-item-value" style="pointer-events: none;">Coimbatore, Tamil Nadu, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal-element">
+                    <form id="contactForm" class="contact-form glass-card">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" id="name" name="name" required class="form-input" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" required class="form-input" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="form-input" placeholder="Project Discussion">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Transmission Message</label>
+                            <textarea id="message" name="message" rows="5" required class="form-input" placeholder="Your message details here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-glow btn-primary" style="width: 100%; justify-content: center; padding: 1rem 0; border-radius: 12px; gap: 0.5rem;">
+                            <span>Send Message</span>
+                            <span class="submit-icon-wrapper" style="display: inline-flex; align-items: center; justify-content: center;">
+                                <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 10. Futuristic Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div>
+                <a href="#hero" class="logo" style="margin-bottom: 0.5rem;">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Suresh.dev</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
+                <p class="footer-copy">Designed & Engineered from scratch. Powered by AI.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://github.com/Suresh2160" target="_blank" class="footer-link">GITHUB</a>
+                <a href="https://www.linkedin.com/in/sureshio" target="_blank" class="footer-link">LINKEDIN</a>
+                <a href="mailto:s.suresh9159329346@gmail.com" class="footer-link">EMAIL</a>
+            </div>
+            
+            <div class="footer-copyright">
+                &copy; <span id="footerYear">2026</span> Suresh S. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
