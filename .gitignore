@@ -17,3 +17,7 @@ $RECYCLE.BIN/
 # Temporary Scratch Files
 scratch/
 
+# Microsoft Office Temporary Files
+~$*
+
+
